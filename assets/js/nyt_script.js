@@ -1,8 +1,12 @@
 console.log("New York Times Article Search Started")
-let search_term, num_records, start_year, end_year;
+let search_term, num_records, start_year, end_year, results_div;
 
 $("#search_button").on("click", function() {
     execute_query();
+})
+
+$("#clear_button").on("click", function() {
+
 })
 
 function execute_query(){
