@@ -73,9 +73,10 @@ function add_results(results){
         article_abstract = $("<p>").addClass("card-text").text(result.abstract);
         article_url = $("<a>").addClass("card-link");
         article_url.attr("href", result.web_url);
+        article_url.attr("target", "_blank");
         article_url.text("Link to Article");
 
-        resultsDiv.append(card);
+        resultsDiv.prepend(card);
         card.append(card_body);
         card_body.append(article_title);
         card_body.append(article_author);
