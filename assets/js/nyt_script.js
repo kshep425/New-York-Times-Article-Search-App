@@ -38,9 +38,29 @@ function execute_query(){
       url: queryURL,
       method: "GET",
     }).then(function(response) {
-        console.log(response);
+        console.log(response.response.docs);
+        add_results(response.response.docs)
     }).fail(function(response){
         console.log(response);
         alert("Query Failed");
     })
+}
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+
+function add_results(results){
+    console.log(results)
+    let card, card_body, article_title, article_author, article_abstract,
+    card = $("<div>").addClass("card");
+    card_body = $("<div>").addClass("card-body");
+    article_title = $("<h5>").addClass("card-title").text()
+
 }
