@@ -2,39 +2,19 @@ console.log("New York Times Article Search Started")
 let search_term, num_records, start_year, end_year;
 
 $("#search_button").on("click", function() {
-    search_term = $("#search_term").val();
-    num_records = $("#num_recores").val();
-    start_year = $("#start_year").val();
-    end_year = $("end_year").val();
-
-    console.log("Search Terms: ");
-    console.log("search_term: " + search_term);
-    console.log("num_records: " + num_records);
-    console.log("start_year: " + start_year);
-    console.log("end_year: " + end_year);
-
-
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-      animal + "&api_key=UVVjQTtcnM5gp6mnJLlDmhH8dhGqYqx5&limit=10";
-
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-        console.log(response);
-    })
+    execute_query();
 })
 
 function execute_query(){
-    // search_term = $("#search_term").val();
-    // num_records = $("#num_records").val();
-    // start_year = $("#start_year").val();
-    // end_year = $("end_year").val();
+    search_term = $("#search_term").val();
+    num_records = $("#num_records").val();
+    start_year = $("#start_year").val();
+    end_year = $("end_year").val();
 
-    search_term = "news";
-    num_records = "5";
-    start_year = "19810401";
-    end_year = "19810430";
+    // search_term = "news";
+    // num_records = "5";
+    // start_year = "19810401";
+    // end_year = "19810430";
 
     console.log("Search Terms: ");
     console.log("search_term: " + search_term);
@@ -52,7 +32,7 @@ function execute_query(){
     }).then(function(response) {
         console.log(response);
     }).fail(function(response){
-        console.log(response)
-        alert("Query Failed")
+        console.log(response);
+        alert("Query Failed");
     })
 }
