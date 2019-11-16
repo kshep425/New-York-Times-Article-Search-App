@@ -7,6 +7,7 @@ $("#search_button").on("click", function() {
 })
 
 $("#clear_button").on("click", function() {
+
     resultsDiv = "";
 })
 
