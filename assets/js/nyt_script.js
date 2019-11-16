@@ -9,7 +9,7 @@ function execute_query(){
     search_term = $("#search_term").val();
     num_records = $("#num_records").val();
     start_year = $("#start_year").val();
-    end_year = $("end_year").val();
+    end_year = $("#end_year").val();
 
     // search_term = "news";
     // num_records = "5";
