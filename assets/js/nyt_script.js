@@ -6,10 +6,10 @@ $("#search_button").on("click", function() {
 })
 
 function execute_query(){
-    search_term = $("#search_term").val();
-    num_records = $("#num_records").val();
-    start_year = $("#start_year").val();
-    end_year = $("#end_year").val();
+    search_term = $("#search_term").val().trim();
+    num_records = $("#num_records").val().trim();
+    start_year = $("#start_year").val().trim();
+    end_year = $("#end_year").val().trim();
 
     // search_term = "news";
     // num_records = "5";
@@ -23,8 +23,16 @@ function execute_query(){
     console.log("end_year: " + end_year);
 
     // https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=19810401&end_date=19810430&q=news&api-key=gWZiyiD6GBMUzuq0ygbz6m10xPEfuC8O
-    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=gWZiyiD6GBMUzuq0ygbz6m10xPEfuC8O&sort=newest&q=" + search_term + "&page=" + num_records + "&begin_date=" + start_year + "&end_date=" + end_year
-    ;
+    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=gWZiyiD6GBMUzuq0ygbz6m10xPEfuC8O&sort=newest&q=" + search_term + "&page=" + num_records;
+
+    if (start_year !=""){
+        queryURL = queryURL + "&begin_date=" + start_year
+    }
+
+    if (end_year != ""){
+
+        queryURL = queryURL + "&end_date=" + end_year
+    }
 
     $.ajax({
       url: queryURL,
