@@ -1,0 +1,1 @@
+console.log("New York Times Article Search Started")
