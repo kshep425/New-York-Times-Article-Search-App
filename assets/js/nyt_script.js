@@ -6,8 +6,9 @@ $("#search_button").on("click", function() {
     execute_query();
 })
 
-$("#clear_button").on("click", function() {
-    resultsDiv = "";
+$("#Clear_button").click( function() {
+    console.log("Clear button clicked")
+    resultsDiv.empty();
 })
 
 function execute_query(){
@@ -15,11 +16,6 @@ function execute_query(){
     num_records = $("#num_records").val().trim();
     start_year = $("#start_year").val().trim();
     end_year = $("#end_year").val().trim();
-
-    // search_term = "news";
-    // num_records = "5";
-    // start_year = "19810401";
-    // end_year = "19810430";
 
     console.log("Search Terms: ");
     console.log("search_term: " + search_term);
@@ -50,15 +46,6 @@ function execute_query(){
         alert("Query Failed");
     })
 }
-
-// <div class="card" style="width: 18rem;">
-//   <div class="card-body">
-//     <h5 class="card-title">Card title</h5>
-//     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-//     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//     <a href="#" class="card-link">Card link</a>
-//   </div>
-// </div>
 
 function add_results(results){
     console.log(results)
