@@ -9,6 +9,7 @@ $("#search_button").on("click", function() {
 $("#Clear_button").click( function() {
     console.log("Clear button clicked")
     resultsDiv.empty();
+
 })
 
 function execute_query(){
